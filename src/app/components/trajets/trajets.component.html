@@ -1,0 +1,29 @@
+<h3>Trajet</h3>
+
+
+<table>
+    <thead>
+      <tr>
+        <th>address_depart</th>
+        <th>address_arrivee</th>
+        <th>distance</th>
+        <th>Voir plus</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for(obj of liste_trajet;track obj.address_depart){
+        
+            <tr class="synced">
+                <td>{{obj.address_depart}}</td>
+                <td>{{obj.address_arrive}}</td> 
+                <td>{{obj.distance}}</td>
+                <td><a [routerLink]="['/trajets/'+ obj.address_depart]"> Details </a></td>
+            </tr>
+    
+        }
+      
+    </tbody>
+  </table>
+
+  
+  

@@ -1,0 +1,28 @@
+<h3>ETUDIANT</h3>
+
+<ul>
+    <li><b>nom:</b>{{nom}}</li>
+    <li><b>prenom:</b>{{prenom}}</li>
+    <li><b>age:</b>{{age}}</li>
+    <li><b>Date de naissance:</b>{{date_naissance}}</li>
+    <li><b>filiere:</b>{{filiere}}</li>
+</ul>
+
+
+@if(age<21){
+    <h3 class="mineur">etudiant mineur</h3>
+}@else {
+    <h3 class="majeur">etudiant majeur</h3>
+}
+ <ul>
+    @for(obj of ues;track obj){
+        <li>{{obj}}</li>
+    }
+ </ul>
+ <ul>
+    @for(obj of liste_etudiants;track obj.matricule){
+        <li>{{obj.nom}},{{obj.prenom}}</li>
+        <a [routerLink]="['/etudiant/'+obj.matricule]"> Details </a>
+
+    }
+ </ul>

@@ -1,0 +1,33 @@
+<h3> Vehicule </h3>
+
+
+ <table>
+    <thead>
+      <tr>
+        <th>marque</th>
+        <th>modele</th>
+        <th>nombre_chevaux</th>
+        <th>couleur </th>
+        <th>moteur </th>
+        <th>nombre_portieres </th>
+        <th>nombre_places </th>
+        <th>automatique </th>
+        <th>Voir plus</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for(obj of liste_vehicules;track obj.marque){
+            <tr class="synced">
+                <td>{{obj.marque}}</td>
+                <td>{{obj.modele}}</td>
+                <td>{{obj.nombre_chevaux}}</td>
+                <td>{{obj.couleur}}</td>
+                <td>{{obj.moteur}}</td>
+                <td>{{obj.nombre_portieres}}</td>
+                <td>{{obj.nombre_places}}</td>
+                <td>{{obj.automatique}}</td> 
+                <td><a [routerLink]="['/vehicules/'+ obj.marque]"> Details </a></td>
+            </tr>  
+        }
+    </tbody>
+  </table>
